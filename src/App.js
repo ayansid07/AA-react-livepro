@@ -20,33 +20,33 @@
 //         </div>
 //       );
 //     };
-    
+
 // export default App;
 
-
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import Nav from './components/Nav';
-import Home from './components/Home';
-import Plans from './components/Plans';
-import Menu from './components/Menu';
-import Profile from './components/Profile';
-import Contact from './components/Contact';
-import Services from './components/Services';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
+import Plans from "./components/Plans";
+import Menu from "./components/Menu";
+import Profile from "./components/Profile";
+import Contact from "./components/Contact";
+import Services from "./components/Services";
 
 const App = () => {
   return (
-    <div className='bg-site bg-no-repeat bg-cover overflow-hidden'>
+    <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
       <Router>
         <Header />
-        <Nav /> {/* Place Nav component inside Router */}
+        <Nav />
         <Routes>
-          <Route path='/home' element={<Home />} />
-          <Route path='/plans' element={<Plans />} />
-          <Route path='/menu' element={<Menu />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/contact' element={<Contact />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/plans" element={<Plans />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
     </div>

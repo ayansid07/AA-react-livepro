@@ -9,7 +9,7 @@ const Nav = () => {
       <div className="mx-auto w-full">
         <div
           className="w-full bg-gray-800 h-[96px] backdrop-blur-2xl
-        rounded-2xl mx-auto px-5 flex justify-between
+        rounded-3xl mx-auto px-5 flex justify-between
         items-center text-2xl text-white/50"
         >
           <NavLink
