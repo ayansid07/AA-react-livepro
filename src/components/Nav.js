@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { BiHomeAlt, BiUser } from "react-icons/bi";
 import { BsClipboardData, BsBriefcase, BsChatSquareText } from "react-icons/bs";
 
@@ -30,7 +30,7 @@ const Nav = () => {
             }) => `cursor-pointer w-[60px] h-[60px] flex items-center
           justify-center ${isActive ? `bg-green-500 rounded-full` : ``}`}
           >
-            <BiUser />
+            <BsBriefcase />
           </NavLink>
           <NavLink
             to="/menu"
@@ -48,7 +48,7 @@ const Nav = () => {
             }) => `cursor-pointer w-[60px] h-[60px] flex items-center
           justify-center ${isActive ? `bg-green-500 rounded-full` : ``}`}
           >
-            <BsBriefcase />
+            <BiUser />
           </NavLink>
           <NavLink
             to="/contact"

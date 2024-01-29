@@ -32,7 +32,7 @@ import Plans from "./components/Plans";
 import Menu from "./components/Menu";
 import Profile from "./components/Profile";
 import Contact from "./components/Contact";
-import Services from "./components/Services";
+// import Services from "./components/Services";
 
 const App = () => {
   return (
