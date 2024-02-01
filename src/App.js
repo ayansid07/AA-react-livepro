@@ -42,6 +42,7 @@ const App = () => {
         <Header />
         <Nav /> {/* Place Nav component inside Router */}
         <Routes>
+          <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/plans' element={<Plans />} />
           <Route path='/menu' element={<Menu />} />

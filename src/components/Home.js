@@ -14,8 +14,9 @@ const Home = () => {
 
   return (
     <div>
-     <HeroSlider></HeroSlider>
-     <ChooseUs></ChooseUs>
+     <HeroSlider/>
+      <ChooseUs/>
+      
 
 
     </div>
