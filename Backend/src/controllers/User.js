@@ -3,25 +3,68 @@ const userModel = require('../models/user');
 const providerModel = require('../models/provider');
 const generateToken = require('../utils/generateToken');
 const uploads = require('../utils/cloudinaryUpload')
-exports.registerUser = async(req,res) =>{
-    try {
-        const {name,email,password,phoneNumber} = req.body;
-        const userExists = await userModel.findOne({email})
-        // Checking If User Already Exist With Entered Email
-        if(userExists)
-            return res.status(400).json({message:"User Already Exists"});
-        
-        // Checking if email already exists as provider Email Id
-        const isProvider = await providerModel.findOne({email});
-        if(isProvider)
-            return res.status(400).json({message:"Try Different Email Id"})
+const subscriptionModel=require('../models/subscription');
 
-        const user = await userModel.create({name,email,password,phoneNumber});
-        generateToken(res,201,user,true)
+exports.registerUser = async (req, res) => {
+    try {
+        const { name, email, password, phoneNumber, address, planType, startDate } = req.body;
+
+        // Check if email, name, password, phoneNumber, address, and planType are provided
+        if (!email || !name || !password || !phoneNumber || !address || !planType || !startDate) {
+            return res.status(400).json({ message: "All fields including planType and startDate are required" });
+        }
+
+        // Check if a file is uploaded for the profile picture
+        if (!req.file) {
+            return res.status(400).json({ message: "Profile picture is required" });
+        }
+
+        const userExists = await userModel.findOne({ email });
+
+        if (userExists)
+            return res.status(400).json({ message: "User Already Exists" });
+
+        const isProvider = await providerModel.findOne({ phoneNumber });
+        if (isProvider)
+            return res.status(400).json({ message: "User Already Exists " });
+
+
+        // Create a new user instance
+        let profilePic = "";
+        if (req.file) {
+            const location = req.file.buffer;
+            const result = await uploads(location);
+            profilePic = result.url;
+        }
+
+        const user = new userModel({
+            name,
+            email,
+            password,
+            phoneNumber,
+            address,
+            profilePic
+        });
+        // console.log("user",user)
+
+        // Save the user instance
+        await user.save();
+
+        // Save plan-related details to subscription model
+        const subscription = new subscriptionModel({
+            userId: user._id,
+            planType,
+            startDate
+            // Add other plan-related details if needed
+        });
+        await subscription.save();
+        generateToken(res, 201, user, true);
     } catch (error) {
-        return res.status(500).json({message:error})
+        return res.status(500).json({ message: error });
     }
-}
+};
+
+
 exports.loginUser = async(req,res) =>{
     try {
         const {email, password} = req.body;

@@ -1,5 +1,5 @@
 const express = require('express');
-const { registerProvider, loginProvider, logoutProvider, getAllProviders, getProviderById, getProviderDetails } = require('../controllers/provider');
+const { registerProvider, loginProvider, logoutProvider, getAllProviders, getProviderById, getProviderDetails, activatePlan } = require('../controllers/provider');
 const { isProvider } = require('../middleware/isProvider');
 const router = express.Router()
 const multer = require('multer')
@@ -17,5 +17,6 @@ router.get('/me',isProvider, getProviderDetails)
 
 router.get('/:_id', getProviderById);
 
+router.post('/activePlan/:_id',activatePlan);
 
 module.exports = router
