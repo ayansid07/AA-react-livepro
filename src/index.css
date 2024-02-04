@@ -28,10 +28,14 @@
   border-radius: 100%;
 }
 
+.backPic {
+  background-image: url("https://media.istockphoto.com/id/537828266/photo/4th-of-july-picnic.jpg?s=612x612&w=0&k=20&c=d1-fpYlPXddf575DVQZQ3qLUVYLBoxunAy4i8Dh53m0=");
+}
+
 @layer base {
-  body {
+  /* body {
     @apply font-secondary text-lg leading-8 text-white bg-gradient-to-br from-green-500   via-emerald-500 to-teal-500;
-  }
+  } */
   .h2 {
     @apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
   }

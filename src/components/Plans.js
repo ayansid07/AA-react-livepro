@@ -1,18 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Plan1 from "./Plan1";
+// import Plan1 from "./Plan1";
 
 export default function Plans() {
+  const premiumPlan = 3300;
+
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-green-300 mb-11 md:flex-row md:space-y-0 md:space-x-16 md:my-0 ">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-green-300 mb-11 md:flex-row md:space-y-0 md:space-x-16 md:my-0 backPic">
         {/* New Card  */}
         {/* <!-- Inner Container --> */}
-        <div className="flex flex-col my-6 space-y-6 md:space-y-0 md:space-x-6 md:flex-row md:my-0 mb-20">
-          {/* Second Card */}
-          <div className=" rounded-xl text-black">
+        <div className="flex flex-col my-6 space-y-6 md:space-y-0 md:space-x-6 md:flex-row md:my-0 mb-5">
+          {/* First Card */}
+          <div className=" rounded-xl text-black ">
             {/* <!-- Upper Container --> */}
-            <div className="p-8 mx-3 mt-3 rounded-3xl bg-slate-200">
+            <div className="p-8 mx-3 mt-3 rounded-3xl bg-slate-200 shadow-2xl shadow-black">
               <div className="text-center uppercase text-4xl font-extrabold text-gray-900">
                 Premium
               </div>
@@ -20,9 +22,11 @@ export default function Plans() {
                 Lunch & Dinner
               </h2>
               <h3 className="mt-2 text-center text-xl">
-                Two Time Tiffin, Billed monthly.
+                Two Time Tiffin per day, Billed monthly.
               </h3>
-              <h3 className="mt-2 text-center font-extrabold">Rs 3300/Month</h3>
+              <h3 className="mt-2 text-center text-xl font-extrabold">
+                {`Rs ${premiumPlan}/Month`}
+              </h3>
               <div className="flex justify-center">
                 <Link
                   to="#"
@@ -36,12 +40,45 @@ export default function Plans() {
             </div>
             {/* <div className="p-1 mx-3 mb-4 rouded-3xl"></div> */}
           </div>
-          <Plan1
+          {/* <Plan1
             title="Lunch"
             description="Starting at $9.99"
             price="per day meal"
             image="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/smoked-salmon-quinoa-dill-lunch-pot-4b718ac.jpg?quality=90&resize=500,454"
-          />
+          /> */}
+        </div>
+
+        {/* Second card starts from here */}
+        {/* <!-- Inner Container --> */}
+        <div className="flex flex-col my-6 space-y-6 md:space-y-0 md:space-x-6 md:flex-row md:my-0 mb-20">
+          {/* Second Card */}
+          <div className=" rounded-xl text-black ">
+            {/* <!-- Upper Container --> */}
+            <div className="p-8 mx-3 mt-3 rounded-3xl bg-slate-200 shadow-2xl shadow-black">
+              <div className="text-center uppercase text-4xl font-extrabold text-gray-900">
+                Premium
+              </div>
+              <h2 className="mt-10 font-serif text-5xl text-center font-semibold">
+                Lunch / Dinner
+              </h2>
+              <h3 className="mt-2 text-center text-xl">
+                One Time Tiffin per day, Billed monthly.
+              </h3>
+              <h3 className="mt-2 text-center text-xl font-extrabold">
+                {`Rs ${premiumPlan}/Month`}
+              </h3>
+              <div className="flex justify-center">
+                <Link
+                  to="#"
+                  className="inline-block px-10 py-3 my-6 text-center text-white font-bold
+                            border border-green-500 rounded-3xl w-full hover:bg-green-800 bg-green-500
+                            hover:border-green-800 duration-200"
+                >
+                  Purchase
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
