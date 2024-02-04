@@ -29,6 +29,7 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Plans from "./components/Plans";
+
 import Menu from "./components/Menu";
 import Profile from "./components/Profile";
 import Contact from "./components/Contact";
