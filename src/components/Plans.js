@@ -29,7 +29,7 @@ export default function Plans() {
               </h3>
               <div className="flex justify-center">
                 <Link
-                  to="#"
+                  to="/signup"
                   className="inline-block px-10 py-3 my-6 text-center text-white font-bold
                             border border-green-500 rounded-3xl w-full hover:bg-green-800 bg-green-500
                             hover:border-green-800 duration-200"
@@ -69,7 +69,7 @@ export default function Plans() {
               </h3>
               <div className="flex justify-center">
                 <Link
-                  to="#"
+                  to="/signup"
                   className="inline-block px-10 py-3 my-6 text-center text-white font-bold
                             border border-green-500 rounded-3xl w-full hover:bg-green-800 bg-green-500
                             hover:border-green-800 duration-200"

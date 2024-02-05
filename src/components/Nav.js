@@ -6,10 +6,10 @@ import { BsClipboardData, BsBriefcase, BsChatSquareText } from "react-icons/bs";
 const Nav = () => {
   return (
     <nav className="fixed bottom-0 w-full overflow-hidden z-50">
-      <div className="mx-auto w-full">
+      <div className="mx-auto w-full mb-0"> {/* Updated to remove bottom margin */}
         <div
-          className="w-full bg-gray-800 h-[96px] backdrop-blur-2xl
-        rounded-3xl mx-auto px-5 flex justify-between
+          className="w-full bg-gray-800 h-[100px] backdrop-blur-2xl
+        rounded-t-3xl mx-auto px-5 flex justify-between
         items-center text-2xl text-white/50"
         >
           <NavLink
@@ -50,7 +50,9 @@ const Nav = () => {
           >
             <BiUser />
           </NavLink>
-          <NavLink
+
+          {/* Uncomment this section if you want to add a "Contact Us" option in the future */}
+          {/* <NavLink
             to="/contact"
             className={({
               isActive,
@@ -58,7 +60,7 @@ const Nav = () => {
           justify-center ${isActive ? `bg-green-500 rounded-full` : ``}`}
           >
             <BsChatSquareText />
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
     </nav>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function Profile() {
+export default function Signup() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -295,13 +295,14 @@ export default function Profile() {
               type="submit"
               className="bg-green-700 text-white p-2 rounded-md w-full hover:bg-green-400 focus:outline-none focus:shadow-outline-blue transition-all duration-300"
             >
-              {loading ? "Signing Up..." : "Sign Up"}
+              {loading ? setSuccess(true) : "Sign Up"}
             </button>
 
             {/* Thank You Message */}
             {success && (
               <div className="mt-4 text-green-700 text-center">
                 Thank you for signing up Now Login Using Same Email & Password!
+                {setFormData("")}
               </div>
             )}
 

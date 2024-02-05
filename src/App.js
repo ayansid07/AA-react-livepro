@@ -29,25 +29,27 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Plans from "./components/Plans";
-
 import Menu from "./components/Menu";
 import Profile from "./components/Profile";
 import Contact from "./components/Contact";
-// import Services from "./components/Services";
+import Services from "./components/Services";
+import Signup from "./components/Signup";
+import About from "./components/About";
 
 const App = () => {
   return (
-    <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
+    <div>
       <Router>
         <Header />
-        <Nav />
+        <Nav /> {/* Place Nav component inside Router */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/plans" element={<Plans />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </Router>
     </div>
