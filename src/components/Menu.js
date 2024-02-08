@@ -11,7 +11,7 @@ export default function Menu() {
 
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="bg-white rounded-3xl shadow-md p-6 text-center mb-28 mx-4">
+      <div className="bg-white rounded-3xl shadow-2xl p-6 text-center mb-28 mx-4">
         <h2 className="text-2xl text-gray-800 font-bold mb-4">Menu</h2>
         {loading && <div className="loader">Loading...</div>}
         <div className="flex flex-col">
