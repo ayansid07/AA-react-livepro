@@ -7,7 +7,7 @@ const user = require('./routes/User');
 const provider = require('./routes/provider');
 const food = require ('./routes/foods')
 const order = require('./routes/order')
-const address = require('./routes/address');
+const address = require('./routes/address'); 
 const review  = require('./routes/review')
 const Subscription = require('./models/subscription');
 
@@ -46,8 +46,6 @@ const updateFood = async() =>{
 new CronJob('0 0 * * *', async () => {
     await updateFood()
   }, null, true, 'Asia/Kolkata');
-
-  
   // Function to update meal counts daily
   const updateMealCounts = async () => {
       try {

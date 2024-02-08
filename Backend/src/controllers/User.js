@@ -92,3 +92,20 @@ exports.getUserDetails = async(req,res) =>{
       return res.status(500).json({success:false})
     }
 }
+
+exports.getPlanDetails =async(req,res)=>{
+try {
+    const {userId} =req.params;
+    if(!userId){
+        return res.status(400).json({message:'UserId is required!'});
+    }
+    const subscription = await subscriptionModel.findOne({userId});
+    if(!subscription){
+        return res.status(400).json({message:'Subscription is not found with this UserId'});
+    }
+
+    return res.status(200).json({subscription});
+} catch (error) {
+    return res.status(500).json({message:error.message});
+}
+}
