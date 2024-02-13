@@ -36,8 +36,11 @@ import Contact from './components/Contact';
 import Landing from './components/Landing';
 import Services from './components/Services';
 import About from './components/About';
+import Signup from './components/Signup';
+import Login from './components/Login';
 
 const App = () => {
+ 
   return (
     <div >
       <Router>
@@ -51,6 +54,8 @@ const App = () => {
           <Route path='/profile' element={<Profile />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/about' element={<About />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
       </Router>
     </div>

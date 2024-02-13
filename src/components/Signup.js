@@ -60,10 +60,10 @@ export default function Profile() {
   return (
   
     <div >
-          <h2 className='text-5xl text-green-600 m-6 font-bold mb-6 text-gray-800'>Sign Up</h2>
+        <h2 className='text-5xl text-green-600 m-6 font-bold mb-6 text-gray-800'>Sign Up</h2>
 
-      <div className='w-full h-full flex items-center justify-center mb-28'>
-      <div className='m-6 rounded-3xl' style={{ backgroundImage: 'url("https://img.freepik.com/premium-photo/green-watercolor-background-with-stain-watercolor_900101-24012.jpg")', backgroundSize: 'cover', backgroundPosition: 'center',  }}>
+        <div className='w-full h-full flex items-center justify-center mb-28'>
+        <div className='m-6 rounded-3xl' style={{ backgroundImage: 'url("https://img.freepik.com/premium-photo/green-watercolor-background-with-stain-watercolor_900101-24012.jpg")', backgroundSize: 'cover', backgroundPosition: 'center',  }}>
         <form className='max-w-md w-full bg-white bg-opacity-50 rounded-3xl p-8 shadow-2xl backdrop-blur-lg' onSubmit={handleSubmit}>
 
 
@@ -241,7 +241,7 @@ export default function Profile() {
         {/* Submit Button */}
         <button
               type='submit'
-              className='bg-green-700 text-white p-2 rounded-md w-full hover:bg-green-400 focus:outline-none focus:shadow-outline-blue transition-all duration-300'
+              className='bg-green-700 text-white p-2 rounded-3xl w-full hover:bg-green-400 focus:outline-none focus:shadow-outline-blue transition-all duration-300'
             >
               {loading ? 'Signing Up...' : 'Sign Up'}
             </button>
