@@ -3,7 +3,6 @@ import axios from 'axios';
 
 export default function Login() {
   const [formData, setFormData] = useState({
-    
     email: '',
     password: '',
   });
@@ -13,7 +12,6 @@ export default function Login() {
   const [success, setSuccess] = useState(false);
 
 
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -21,8 +19,6 @@ export default function Login() {
       [name]: value,
     });
   };
-
-
 
 
   const handleSubmit = async (e) => {
@@ -38,8 +34,9 @@ export default function Login() {
       if (response.data) {
         // Set some kind of authentication token or session
         // For example, you can use localStorage or sessionStorage
-        localStorage.setItem('token', response.data._id );
-        console.log(response.data._id);
+        localStorage.setItem('token', response.data._id);
+        console.log(response.data._id)
+   
         // Set success state to true
         setSuccess(true);
   
@@ -106,8 +103,8 @@ export default function Login() {
 
             {/* Thank You Message */}
             {success && (
-              <div className='mt-4 text-green-700 text-center'>
-                Logged In
+              <div className='mt-4 text-gray-700 text-center'>
+                Login success
               </div>
             )}
 

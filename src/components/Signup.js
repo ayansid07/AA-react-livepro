@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default function Profile() {
+export default function Signup() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',

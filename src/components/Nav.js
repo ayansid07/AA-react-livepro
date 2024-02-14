@@ -24,7 +24,7 @@ const Nav = () => {
             </span>
           </NavLink>
           <NavLink
-            to="/plans"
+            to="/detailplan"
             className={({
               isActive,
             }) => `cursor-pointer w-[60px] h-[60px] flex items-center
